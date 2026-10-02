@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10102b">
+<title>Tanzania AI — Global Hub</title>
+<style>
+:root{--bg:#090b1b;--panel:#151832;--panel2:#1c2042;--text:#f7f7ff;--muted:#a9afd0;--cyan:#48e4e8;--pink:#ff58b7;--gold:#ffd36b;--line:#ffffff18}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#28245b 0,transparent 40%),radial-gradient(ellipse at 100% 20%,#183b54 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;backdrop-filter:blur(18px);background:#090b1bdc;border-bottom:1px solid var(--line);padding:14px max(18px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),#7771ff 55%,var(--pink));display:grid;place-items:center;color:#10102b;font-size:23px;box-shadow:0 0 28px #48e4e855}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
+button{font:inherit;cursor:pointer;border:0;color:inherit}.pill{border:1px solid var(--line);background:#ffffff0b;padding:10px 14px;border-radius:999px}
+main{max-width:1180px;margin:auto;padding:28px 18px 100px}.hero{position:relative;overflow:hidden;border:1px solid #ffffff20;border-radius:30px;padding:clamp(24px,5vw,58px);background:linear-gradient(115deg,#24245b 0%,#183d59 55%,#321c4e 100%);box-shadow:0 25px 70px #0005}
+.hero:after{content:"✦";position:absolute;font-size:260px;right:5%;top:-55px;color:#ffffff0c;transform:rotate(15deg)}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(36px,6vw,68px);line-height:1.02;margin:14px 0;max-width:700px;letter-spacing:-2px}.gradient{background:linear-gradient(90deg,#fff,var(--cyan),#ff9dd5);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:#d1d5f1;max-width:570px;line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.primary{background:linear-gradient(100deg,var(--cyan),#8d9bff);color:#0b1230;font-weight:800;padding:13px 18px;border-radius:14px;box-shadow:0 8px 24px #48e4e833}.secondary{background:#ffffff12;border:1px solid #ffffff28;padding:13px 18px;border-radius:14px}
+.search{margin:22px 0 30px;display:flex;gap:10px;background:#151832;border:1px solid var(--line);padding:10px;border-radius:18px}.search input{background:transparent;border:0;outline:0;color:white;flex:1;min-width:0;padding:8px;font-size:15px}.search button{background:#292e55;border-radius:12px;padding:10px 16px}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 15px}.sectionhead h2{margin:0;font-size:23px}.sectionhead p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.tile{min-height:150px;border-radius:22px;padding:18px;border:1px solid var(--line);background:linear-gradient(145deg,#1b2042,#11152c);transition:.2s;cursor:pointer;position:relative;overflow:hidden}.tile:hover{transform:translateY(-4px);border-color:#48e4e877;box-shadow:0 14px 35px #0005}.tile .emoji{font-size:30px}.tile h3{margin:13px 0 6px;font-size:16px}.tile p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.tile:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-35px;bottom:-45px;background:var(--glow,#48e4e8);filter:blur(40px);opacity:.18}
+.featured{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.feature{border:1px solid var(--line);border-radius:24px;padding:22px;background:linear-gradient(135deg,#22264c,#171a35)}.feature h3{margin:8px 0}.feature p{color:var(--muted);line-height:1.6;font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.chip{background:#ffffff0c;border:1px solid var(--line);padding:8px 11px;border-radius:999px;font-size:12px}
+.videoart{height:170px;border-radius:18px;background:linear-gradient(130deg,#2c2860,#a34383 55%,#e58c69);display:grid;place-items:center;font-size:54px;position:relative;overflow:hidden}.videoart:before{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff44;border-radius:50%;left:-40px;top:-100px}.videoart span{z-index:1;text-shadow:0 4px 20px #0008}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:25px;border-top:1px solid var(--line)}
+nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:4px;padding:7px;background:#151832ed;backdrop-filter:blur(15px);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 40px #0008}nav button{padding:10px 13px;border-radius:12px;background:transparent;color:var(--muted);font-size:12px}nav button.active{background:#ffffff17;color:var(--cyan)}
+.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#f7f7ff;color:#10102b;padding:12px 18px;border-radius:12px;display:none;z-index:9;font-weight:700;box-shadow:0 8px 30px #0008}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.featured{grid-template-columns:1fr}.hero{border-radius:23px}header{padding:12px 16px}.sectionhead h2{font-size:20px}}
+@media(max-width:420px){.grid{gap:10px}.tile{padding:14px;min-height:140px}.tile h3{font-size:14px}nav{width:calc(100% - 20px);justify-content:space-around}nav button{padding:10px 7px;font-size:11px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">✦</div><div>TANZANIA AI<small>ONE WORLD. ONE HUB.</small></div></div><button class="pill" onclick="notify('Karibu Tanzania AI 🇹🇿')">🇹🇿 Kiswahili ▾</button></header>
+<main>
+<section class="hero"><div class="eyebrow">✦ KARIBU KWENYE MUSTAKABALI</div><h1>Dunia nzima.<br><span class="gradient">Sehemu moja.</span></h1><p>Tanzania AI ni kitovu chako cha ubunifu, maarifa na burudani. Gundua zana za AI, video, muziki, habari na huduma za kidijitali katika sehemu moja.</p><div class="actions"><button class="primary" onclick="document.getElementById('ai').scrollIntoView({behavior:'smooth'})">Anza kutumia AI ✨</button><button class="secondary" onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">Gundua Hub ↓</button></div></section>
+<div class="search"><input id="searchInput" placeholder="Tafuta AI, video, muziki, habari..." oninput="filterTiles()"><button onclick="filterTiles()">Tafuta ⌕</button></div>
+<div class="sectionhead" id="explore"><div><h2>Explore the Hub</h2><p>Huduma zako, zimepangwa sehemu moja.</p></div><span class="chip">V6 • Preview</span></div>
+<div class="grid" id="tiles">
+<div class="tile" style="--glow:#48e4e8" data-key="ai chat assistant"><div class="emoji">🤖</div><h3>AI Assistant</h3><p>Uliza maswali, pata mawazo na msaada wa kila siku.</p></div>
+<div class="tile" style="--glow:#ff58b7" data-key="ai image picha art"><div class="emoji">🎨</div><h3>AI Image Studio</h3><p>Badili mawazo kuwa picha na sanaa za kipekee.</p></div>
+<div class="tile" style="--glow:#ffd36b" data-key="video creator movie"><div class="emoji">🎬</div><h3>Video Creator</h3><p>Andaa mawazo, scripts na video za ubunifu.</p></div>
+<div class="tile" style="--glow:#a78bfa" data-key="music audio"><div class="emoji">🎵</div><h3>Music Hub</h3><p>Gundua muziki, sauti na burudani.</p></div>
+<div class="tile" style="--glow:#48e4e8" data-key="news habari information"><div class="emoji">🌍</div><h3>News & Knowledge</h3><p>Habari, maarifa na taarifa kutoka duniani.</p></div>
+<div class="tile" style="--glow:#ff8b68" data-key="social community media"><div class="emoji">💬</div><h3>Social Hub</h3><p>Sehemu ya jumuiya na majukwaa ya kijamii.</p></div>
+<div class="tile" style="--glow:#7ee7a4" data-key="learning education courses"><div class="emoji">📚</div><h3>Learn & Grow</h3><p>Jifunze teknolojia, lugha na ujuzi mpya.</p></div>
+<div class="tile" style="--glow:#f5a7ff" data-key="tools utilities productivity"><div class="emoji">🧰</div><h3>Smart Tools</h3><p>Zana za kazi, kupanga na kuongeza tija.</p></div>
+</div>
+<div class="sectionhead" id="ai"><div><h2>AI Creative Zone</h2><p>Vituo vya kuanzia safari yako ya ubunifu.</p></div></div>
+<div class="featured"><div class="feature"><div class="eyebrow">✦ YOUR CREATIVE SPACE</div><h3>Wazo lako linaweza kuwa kitu kikubwa.</h3><p>Andika wazo la picha, filamu au mradi. Tanzania AI itakusaidia kupanga hatua zinazofuata. Vipengele vya uzalishaji wa AI vitaunganishwa katika hatua inayofuata.</p><div class="chips"><span class="chip">✍️ Ideas</span><span class="chip">🪄 Prompts</span><span class="chip">🎞️ Storyboards</span></div></div>
+<div class="feature"><div class="videoart"><span>▶</span></div><h3>Video & Stories</h3><p>Sehemu ya kuandaa hadithi, scenes na maudhui ya video.</p><button class="secondary" onclick="notify('Video Creator itaunganishwa kwenye update inayofuata.')">Fungua studio →</button></div></div>
+<div class="sectionhead"><div><h2>Built for everyone</h2><p>Muonekano unaobadilika kulingana na simu au kompyuta.</p></div></div>
+<div class="chips"><span class="chip">🇹🇿 Tanzania first</span><span class="chip">🌐 Global vision</span><span class="chip">📱 Mobile friendly</span><span class="chip">✨ Modern interface</span></div>
+</main><footer>© 2026 Tanzania AI • Prototype V6 • One World. One Hub.</footer>
+<nav><button class="active" onclick="goTop(this)">⌂ Home</button><button onclick="document.getElementById('ai').scrollIntoView({behavior:'smooth'})">✦ AI</button><button onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">▦ Hub</button><button onclick="notify('Wasifu na mipangilio vitaongezwa kwenye update inayofuata.')">◉ Profile</button></nav><div class="toast" id="toast"></div>
+<script>
+function notify(t){let e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>e.style.display='none',2300)}
+function filterTiles(){let q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tile').forEach(t=>t.style.display=t.dataset.key.includes(q)||t.innerText.toLowerCase().includes(q)?'block':'none')}
+function goTop(b){window.scrollTo({top:0,behavior:'smooth'});document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+document.querySelectorAll('.tile').forEach(t=>t.addEventListener('click',()=>notify(t.querySelector('h3').innerText+' — kipengele hiki kinaandaliwa.')))
+</script></body></html>
